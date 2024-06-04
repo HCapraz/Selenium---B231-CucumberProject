@@ -7,6 +7,7 @@ Feature: US004 Amazon testi
 
   Scenario: TC01 arama kutusunda iphone aratilir
     When arama kutusunda "iphone" aratir
+    But kullanici 2 saniye bekler
     And sayfayi kapatir
 
   Scenario: TC02 arama kutusunda java aratilir

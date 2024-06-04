@@ -2,6 +2,7 @@ package techproed.stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
@@ -10,6 +11,7 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 
 public class BlueRentalStepDefinition {
+
     BlueRentalPage blueRentalPage = new BlueRentalPage();
 
     @Given("kullanici blueRentalCar sayfasina gider")
@@ -20,8 +22,9 @@ public class BlueRentalStepDefinition {
 
     @When("login butonuna tiklar")
     public void loginButonunaTiklar() {
-       blueRentalPage.loginButton.click();
+        blueRentalPage.loginButton.click();
     }
+
 
     @And("email ve password bilgileri ile login olur")
     public void emailVePasswordBilgileriIleLoginOlur() {
@@ -29,4 +32,15 @@ public class BlueRentalStepDefinition {
         blueRentalPage.password.sendKeys(ConfigReader.getProperty("blueRentalPassword"), Keys.ENTER);
     }
 
+    @And("kullanici {string} ve {string} bilgilerini girer")
+    public void kullaniciVeBilgileriniGirer(String email, String password) {
+        blueRentalPage.email.sendKeys(email);
+        blueRentalPage.password.sendKeys(password,Keys.ENTER);
+
+    }
+
+    @Then("kullanici login oldugunu dogrular")
+    public void kullaniciLoginOldugunuDogrular() {
+        Assert.assertNotEquals("Login",blueRentalPage.loginVerify.getText());
+    }
 }

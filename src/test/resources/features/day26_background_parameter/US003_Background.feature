@@ -2,34 +2,33 @@
 # 3 tane Scenario oluşturunuz
 # Amazon sayfasında iphone, samsung ve nokia aratınız.
 
-  @US003
-  Feature: US003 Amazon testi
+@US003
+Feature: US003 Amazon testi
 
-    Background:
-      Given kullanici amazon sayfasina gider
+  Background:
+    Given kullanici amazon sayfasina gider
 
-    @iphone
-    Scenario: TC01 arama kutusunda iphone aratilir
+  @iphone
+  Scenario: TC01 arama kutusunda iphone aratilir
 
-      When arama kutusunda iphone aratir
-      And sayfayi kapatir
+    When arama kutusunda iphone aratir
+    And sayfayi kapatir
 
-    @samsung @nokia
-    Scenario: TC02 arama kutusunda samsungu aratilir
+  @samsung @nokia
+  Scenario: TC02 arama kutusunda samsungu aratilir
 
-      When arama kutusunda samsung aratir
-      And sayfayi kapatir
+    When arama kutusunda samsung aratir
+    And sayfayi kapatir
 
-    @nokia
-    Scenario: TC03 arama kutusunda nokia aratilir
+  @nokia
+  Scenario: TC03 arama kutusunda nokia aratilir
 
-      When arama kutusunda nokia aratir
-      And sayfayi kapatir
+    When arama kutusunda nokia aratir
+    And sayfayi kapatir
 
 #      Eger feature file da kullanacağımız senaryolarda ortak adimlar var ise Feature keywordunden
 #   sonra Background yazarak burada ortak adimlari belirtebiliriz
 #   Backgound yapisi @BeforeMethod mantigi ile calisir
-
 
 
 
