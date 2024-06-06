@@ -15,13 +15,18 @@ import org.junit.runner.RunWith;
                 "rerun:TestOutput/failed_scenario.txt"
                 //rerun plugin i ile fail olan scenariolari burada belirtmis oldugumuz failed_scenario.txt dosyasi icinde tutariz
         },
-        features = "src/test/resources/features",
+        features = "@TestOutput/failed_scenario.txt",
         glue = {"techproed/stepDefinitions", "techproed/hooks"},
-        tags = "@US013",
         dryRun = false,
         monochrome = false//eger true kullanirsak konsoldaki ciktilari tek renk siyah olarak verir
 )
-public class Runner {
+/*
+Bu classda sadece fail olan scenariolari calistiracağımız icin feature parametresine feature packaginin yolu
+yerine fail scenariolarin oldugu txt dosyasinin yolunu koyariz
+Dosya yolu belirttigimiz icin path ten önce @ isareti koyariz
+ve sadece dosya icindeki fail olan sceanariolari calistiracağı icin bu classta tags parametresine ihtiyac yoktur
+ */
+public class FailedRunner {
 }
 /*
     dryRun parametresi eger true secili ise scenariolari calistirmadan feature file daki steplerin eksik

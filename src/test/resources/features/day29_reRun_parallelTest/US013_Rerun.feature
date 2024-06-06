@@ -1,7 +1,7 @@
 
 
-@US011
-Feature: US011 Google Testi
+@US013
+Feature: US013 Google Testi rerun failed scenarios
 
   @ford
   Scenario: TC01 Google sayfasinad Arama kutusunda arac aratilir
