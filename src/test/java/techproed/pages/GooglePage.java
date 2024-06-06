@@ -13,7 +13,7 @@ public class GooglePage {
     }
 
     @FindBy(id="APjFqb")
-    public WebElement searchbox;
+    public WebElement searchBox;
 
 
 

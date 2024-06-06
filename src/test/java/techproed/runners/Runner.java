@@ -11,11 +11,13 @@ import org.junit.runner.RunWith;
                 "pretty",//konsol da scenariolar ile ilgili ayrintili bilgi verir
                 "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
-                "junit:target/xml-report/cucumber.xml"
+                "junit:target/xml-report/cucumber.xml",
+                "rerun:TestOutput/failed_scenario.txt"
+                //rerun plugin i ile fail olan scenariolari burada belirtmis oldugumuz failed_scenario.txt dosyasi icinde tutariz
         },
         features = "src/test/resources/features",
-        glue = "techproed/stepDefinitions",
-        tags = "@US003",
+        glue = {"techproed/stepDefinitions", "techproed/hooks"},
+        tags = "@US012",
         dryRun = false,
         monochrome = false//eger true kullanirsak konsoldaki ciktilari tek renk siyah olarak verir
 )
